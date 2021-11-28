@@ -108,6 +108,21 @@ public class WindowGroup : MonoBehaviour
     }
 
     /// <summary>
+    /// 履歴を削除する
+    /// </summary>
+    public void ResetHistory()
+    {
+        int acitveNumber = GetActiveWindowNumber();
+        activeIndex_ = -1;
+        windowHistory_.Clear();
+        if (acitveNumber >= 0)
+        {
+            activeIndex_ = 0;
+            windowHistory_.Add(acitveNumber);
+        }
+    }
+
+    /// <summary>
     /// アクティブなウィンドウ番号を取得
     /// </summary>
     /// <returns></returns>
