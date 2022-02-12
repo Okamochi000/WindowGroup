@@ -47,7 +47,7 @@ public class OpenAndCloseBase : MonoBehaviour
     {
         // Openを使用しないときの自動開閉
         if (!isAutoActive) { return; }
-        if (!this.gameObject.activeSelf || CurrentOpenState == OpenState.Closed) { return; }
+        if (!this.gameObject.activeSelf || CurrentOpenState != OpenState.Closed) { return; }
         Open();
     }
 
